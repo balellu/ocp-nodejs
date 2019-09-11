@@ -28,4 +28,15 @@ describe('Basic routes tests', function() {
         })
 
     })
+
+    it('GET to /njshello should return 200', function(done){
+        chai.request(reqServer)
+        .get('/njshello')
+        .end(function(err, res) {
+            res.should.have.status(200);
+            res.send({ some: 'json' });
+            done();
+        })
+
+    })
 })
