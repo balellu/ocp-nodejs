@@ -8,6 +8,7 @@ chai.use(chaiHTTP);
 reqServer = process.env.HTTP_TEST_SERVER || server
 
 describe('Basic routes tests', function() {
+    console.log("Start of describe");
 
     it('GET to / should return 200', function(done){
         chai.request(reqServer)
@@ -20,6 +21,7 @@ describe('Basic routes tests', function() {
     })
 
     it('GET to /pagecount should return 200', function(done){
+        console.log("Inside Page Count");
         chai.request(reqServer)
         .get('/pagecount')
         .end(function(err, res) {
@@ -30,6 +32,7 @@ describe('Basic routes tests', function() {
     })
 
     it('GET to /njshello should return 200', function(done){
+        console.log("Inside NJS Hello");
         chai.request(reqServer)
         .get('/njshello')
         .end(function(err, res) {
@@ -39,4 +42,5 @@ describe('Basic routes tests', function() {
         })
 
     })
+    console.log("End of describe");
 })
