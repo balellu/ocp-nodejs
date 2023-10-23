@@ -1,4 +1,4 @@
-schemaVersion: 2.2.1
+schemaVersion: 2.2.0
 components:
   - name: runtime
     container:
