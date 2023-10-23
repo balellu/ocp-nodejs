@@ -23,3 +23,10 @@ commands:
       group:
         isDefault: true
         kind: run
+  - id: install-aws-cli
+    exec:
+      commandLine: 'pip3 install awscli --upgrade'
+      component: runtime
+events:
+  postStart:
+    - install-aws-cli
