@@ -1,11 +1,13 @@
 schemaVersion: 2.2.0
+metadata:
+  name: demo-nodejs-app
 components:
-  - name: runtime
-    container:
+  - container:
       image: node:18-alpine
       endpoints:
         - name: http-3000
           targetPort: 3000
+    name: runtime
 commands:
   - id: install
     exec:
