@@ -3,7 +3,7 @@ metadata:
   name: demo-nodejs-app
 components:
   - container:
-      image: node:18-alpine
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
       endpoints:
         - name: http-3000
           targetPort: 3000
