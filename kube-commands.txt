@@ -1,0 +1,4 @@
+Use different kubeconfig
+---- ---- ---- ---- ---- 
+kubectl --kubeconfig kube-files/kube-config get nodes
+
