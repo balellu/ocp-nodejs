@@ -1,0 +1,14 @@
+Use different kubeconfig
+---- ---- ---- ---- ---- 
+kubectl --kubeconfig kube-files/kube-config get nodes
+
+NodeJS app podman commands
+---- ---- ---- ---- ---- --
+podman login quay.io. //pbalellu 
+podman build -t quay.io/pbalellu/njs-demo-app .
+podman push quay.io/pbalellu/njs-demo-app --format v2s1
+
+OCP User management
+---- ---- ---- ----
+htpasswd -c ocp-basic.txt user1
+htpasswd ocp-basic.txt user2 //add users as many as needed

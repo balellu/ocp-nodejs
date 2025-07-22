@@ -1,7 +1,10 @@
-
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure aws 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+Jump server command
+---- ---- ---- ---- 
+ssh -i "demo-jump-server-kp.pem" ec2-user@ec2-18-223-235-181.us-east-2.compute.amazonaws.com
+
 Install awscli
 ---- ---- ----
 pip3 install awscli --upgrade --user
