@@ -4,8 +4,8 @@ metadata:
 components:
   - container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 12G
-      memoryRequest: 2G
+      memoryLimit: 16G
+      memoryRequest: 8G
       endpoints:
         - name: http-3000
           targetPort: 3000
