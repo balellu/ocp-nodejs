@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/part-of: che.eclipse.org
   annotations:
     che.eclipse.org/che-userid: 7b045957-0084-4a82-b84d-432e633c700f
-    che.eclipse.org/scm-personal-access-token-name: guthub
-    che.eclipse.org/scm-url: guthub.com
+    che.eclipse.org/scm-personal-access-token-name: github
+    che.eclipse.org/scm-url: https://github.com/balellu/ocp-nodejs
     che.eclipse.org/scm-organization: github
 stringData:
   token: <add-github pat here>
