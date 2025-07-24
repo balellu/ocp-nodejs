@@ -36,10 +36,14 @@ tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
 
 sudo install -m 0755 /tmp/eksctl /usr/local/bin && rm /tmp/eksctl
 
-Create eks cluster
----- ---- ---- ----
+Create eks cluster using eksctl
+---- ---- ---- ---- ---- ---- --
 eksctl create cluster --name pru-demo-eks-cluster --region us-east-2
 eksctl utils write-kubeconfig --cluster=pru-demo-eks-cluster
+
+Get kubeconfig on aws commnadline
+---- ---- ---- ---- ---- ---- ----
+aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure Azure 
