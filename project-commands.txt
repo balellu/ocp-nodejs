@@ -1,6 +1,7 @@
 Use different kubeconfig
 ---- ---- ---- ---- ---- 
 kubectl --kubeconfig kube-files/kube-config get nodes
+kubectl apply -f kube-files/deployment-njs-app.yaml --kubeconfig kube-files/kubeconfig-eks -n hello-njs-app
 
 NodeJS app podman commands
 ---- ---- ---- ---- ---- --
