@@ -1,7 +1,20 @@
-Use different kubeconfig
----- ---- ---- ---- ---- 
-kubectl --kubeconfig kube-files/kube-config get nodes
+Kubectl commands
+---- ---- ---- -
+Creates:-
+~~~~~~~~
 kubectl apply -f kube-files/deployment-njs-app.yaml --kubeconfig kube-files/kubeconfig-eks -n hello-njs-app
+kubectl apply -f kube-files/services-njs-app.yaml --kubeconfig kube-files/kubeconfig-eks -n hello-njs-app
+kubectl apply -f kube-files/ingress-njs-app.yaml --kubeconfig kube-files/kubeconfig-eks -n hello-njs-app
+
+Deletes:-
+~~~~~~~~
+kubectl --kubeconfig kube-files/kubeconfig-eks delete ingress njs-ingress -n hello-njs-app
+kubectl --kubeconfig kube-files/kubeconfig-eks delete service njs-service -n hello-njs-app
+
+Gets:-
+~~~~~~
+kubectl --kubeconfig kube-files/kube-config get nodes
+kubectl --kubeconfig kube-files/kubeconfig-eks get ingress -n hello-njs-app
 
 NodeJS app podman commands
 ---- ---- ---- ---- ---- --
@@ -13,3 +26,4 @@ OCP User management
 ---- ---- ---- ----
 htpasswd -c ocp-basic.txt user1
 htpasswd ocp-basic.txt user2 //add users as many as needed
+
