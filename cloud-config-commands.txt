@@ -47,7 +47,7 @@ kind: ClusterConfig
 
 metadata:
   name: eks-one-cloud
-  region: use-east-2
+  region: us-east-2
 
 autoModeConfig:
   enabled: true
