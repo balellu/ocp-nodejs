@@ -41,6 +41,18 @@ Create eks cluster using eksctl
 eksctl create cluster --name pru-demo-eks-cluster --region us-east-2
 eksctl utils write-kubeconfig --cluster=pru-demo-eks-cluster
 
+~~~~~ cluster config ~~~~~
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-one-cloud
+  region: use-east-2
+
+autoModeConfig:
+  enabled: true
+~~~~~ ~~~~~ ~~~~~ ~~~~ ~~~
+
 Get kubeconfig on aws commnadline
 ---- ---- ---- ---- ---- ---- ----
 aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
