@@ -5,13 +5,13 @@ metadata:
   labels:
     app: njs-app
 spec:
-#  type: LoadBalancer
-  type: NodePort
+  type: LoadBalancer
+#  type: NodePort
   selector:
-    app.kubernetes.io/name: njs-app
-#    app: njs-app
+#    app.kubernetes.io/name: njs-app
+    app: njs-app
   ports:
     - protocol: TCP
-#      name: http
+      name: http
       port: 8080
       targetPort: 8080
