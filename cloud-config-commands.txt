@@ -66,3 +66,8 @@ aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure GCP 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+gcloud container clusters create $GKE_CLUSTER \
+	--project=$GKE_PROJECT \
+	--zone=$GKE_ZONE
+gcloud container clusters get-credentials hello-cluster \
+    --location us-central1
