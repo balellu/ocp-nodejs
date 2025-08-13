@@ -8,9 +8,7 @@ metadata:
     app: njs-app
 spec:
   type: LoadBalancer
-#  type: NodePort
   selector:
-#    app.kubernetes.io/name: njs-app
     app: njs-app
   ports:
     - protocol: TCP
