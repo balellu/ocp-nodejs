@@ -38,7 +38,8 @@ sudo install -m 0755 /tmp/eksctl /usr/local/bin && rm /tmp/eksctl
 
 Create eks cluster using eksctl
 ---- ---- ---- ---- ---- ---- --
-eksctl create cluster --name pru-demo-eks-cluster --region us-east-2
+eksctl create cluster -f cluster-config.yaml [1]
+eksctl create cluster --name pru-demo-eks-cluster --region us-east-2 [2]
 eksctl utils write-kubeconfig --cluster=pru-demo-eks-cluster
 
 ~~~~~ cluster config ~~~~~
