@@ -31,6 +31,30 @@ commands:
     exec:
       commandLine: 'pip3 install awscli --upgrade'
       component: runtime
+  - id: deploy-on-eks
+    exec:
+      commandLine: kubectl --kubeconfig kube-files/ekubec -n ude-demo-app apply -f kube-files/ude-demoapp-deploy.yaml
+      component: runtime
+      workingDir: ${PROJECT_SOURCE}
+      group:
+        isDefault: false
+        kind: run
+  - id: deploy-on-aks
+    exec:
+      commandLine: kubectl --kubeconfig kube-files/akubec -n ude-demo-app apply -f kube-files/ude-demoapp-deploy.yaml
+      component: runtime
+      workingDir: ${PROJECT_SOURCE}
+      group:
+        isDefault: false
+        kind: run
+  - id: deploy-on-gke
+    exec:
+      commandLine: kubectl --kubeconfig kube-files/gkubec -n ude-demo-app apply -f kube-files/ude-demoapp-deploy.yaml
+      component: runtime
+      workingDir: ${PROJECT_SOURCE}
+      group:
+        isDefault: false
+        kind: run
 events:
   postStart:
     - install-aws-cli
