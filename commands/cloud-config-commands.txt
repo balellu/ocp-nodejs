@@ -67,8 +67,21 @@ aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure GCP 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
-gcloud container clusters create $GKE_CLUSTER \
-	--project=$GKE_PROJECT \
-	--zone=$GKE_ZONE
-gcloud container clusters get-credentials hello-cluster \
-    --location us-central1
+1# downlod gcp-cli tar:
+  curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
+  unzip the tar file 
+2# ./google-cloud-sdk/install.sh
+3# ./google-cloud-sdk/bin/gcloud init --no-browser
+{
+  a.This will start a processs that will provide a command to get access through a command
+  [
+    1. copy above command output in browser enabled shell
+    2. login in the browser with google accounts
+    3. come back to the shell to copy the response
+  ]
+  b. Paste the output from command exeuction
+  <now gcp authentication is complete>
+}
+<restart shell to apply PATH vars>
+
+4# gcloud components install gke-gcloud-auth-plugin
