@@ -2,7 +2,7 @@ Kubectl commands
 ---- ---- ---- -
 Creates:-
 ~~~~~~~~
-kubectl --kubeconfig kube-files/kubeconfig-eks -n ude-demo-app apply -f kube-files/ude-demoapp-deploy.yaml 
+kubectl --kubeconfig kube-files/akubec -n ude-demo-app apply -f kube-files/ude-demoapp-deploy.yaml
 
 Deletes:-
 ~~~~~~~~
