@@ -3,8 +3,8 @@ metadata:
   name: demo-nodejs-app
 components:
   - container:
-      image: quay.io/devfile/universal-developer-image:ubi9-latest
-#      image: quay.io/devfile/universal-developer-image:ubi8-latest
+#      image: quay.io/devfile/universal-developer-image:ubi9-latest
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 16G
       memoryRequest: 8G
       endpoints:
