@@ -39,10 +39,8 @@ sudo install -m 0755 /tmp/eksctl /usr/local/bin && rm /tmp/eksctl
 Create eks cluster using eksctl
 ---- ---- ---- ---- ---- ---- --
 eksctl create cluster -f cluster-config.yaml [1]
-eksctl create cluster --name pru-demo-eks-cluster --region us-east-2 [2]
-eksctl utils write-kubeconfig --cluster=pru-demo-eks-cluster
 
-~~~~~ cluster config ~~~~~
+~~~~~ cluster config [1] ~~~~~
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
@@ -67,6 +65,16 @@ aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure GCP 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+Set up GKE
+~~~~~~~~ ~~
+1. Enable the Kubernetes Engine API
+2. Create default VPC Network
+2.1 Subnets choice: automatic
+3. Create kubeconfig file
+gcloud container clusters get-credentials gke-one-cloud --location us-central1
+
+Set up google cli and kubectl
+~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ 
 1# downlod gcp-cli tar:
   curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
   unzip the tar file 
