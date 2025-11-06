@@ -74,10 +74,10 @@ Set up GKE
 gcloud container clusters get-credentials gke-one-cloud --location us-central1
 
 Set up google cli and kubectl
-~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~ 
+~~~~~~~~ ~~~~~~~~ ~~~~~~~~ ~~~ 
 1# downlod gcp-cli tar:
   curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
-  unzip the tar file 
+  tar -xzf google-cloud-cli-linux-x86_64.tar.gz 
 2# ./google-cloud-sdk/install.sh
 3# ./google-cloud-sdk/bin/gcloud init --no-browser
 {
