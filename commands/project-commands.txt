@@ -2,16 +2,25 @@ Kubectl commands
 ---- ---- ---- -
 Creates:-
 ~~~~~~~~
-kubectl --kubeconfig kube-files/akubec -n ude-demo-app apply -f kube-files/ude-demoapp-deploy.yaml
+kubectl --kubeconfig kube-files/akubec apply -f kube-files/ude-demoapp-deploy.yaml
+kubectl --kubeconfig kube-files/ekubec apply -f kube-files/ude-demoapp-deploy.yaml
+kubectl --kubeconfig kube-files/gkubec apply -f kube-files/ude-demoapp-deploy.yaml
 
 Deletes:-
 ~~~~~~~~
 kubectl --kubeconfig kube-files/akubec delete -n ude-demo-app
+kubectl --kubeconfig kube-files/ekubec delete -n ude-demo-app
+kubectl --kubeconfig kube-files/gkubec delete -n ude-demo-app
 
 Gets:-
 ~~~~~~
 kubectl --kubeconfig kube-files/akubec get nodes
+kubectl --kubeconfig kube-files/ekubec get nodes
+kubectl --kubeconfig kube-files/gkubec get nodes
+
 kubectl --kubeconfig kube-files/akubec get svc -n ude-demo-app
+kubectl --kubeconfig kube-files/ekubec get svc -n ude-demo-app
+kubectl --kubeconfig kube-files/gkubec get svc -n ude-demo-app
 
 App podman commands
 ---- ---- ---- ---- 
