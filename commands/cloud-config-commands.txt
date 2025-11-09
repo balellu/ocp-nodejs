@@ -70,7 +70,9 @@ Set up GKE
 1. Enable the Kubernetes Engine API
 2. Create default VPC Network
 2.1 Subnets choice: automatic
-3. Create kubeconfig file
+3. Create cluster
+gcloud container clusters create-auto gke-one-cloud --location=us-central1
+4. Create kubeconfig file
 gcloud container clusters get-credentials gke-one-cloud --location us-central1
 
 Set up google cli and kubectl
