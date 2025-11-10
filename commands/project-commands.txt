@@ -28,32 +28,3 @@ podman login quay.io. //pbalellu
 podman build -t quay.io/pbalellu/njs-demo-app .
 podman push quay.io/pbalellu/njs-demo-app
 
-OCP User management
----- ---- ---- ----
-htpasswd file creation
-~~~~~~ ~~~~~~ ~~~~~~ ~~
-htpasswd -c ocp-basic.txt user1
-htpasswd ocp-basic.txt user2 //add users as many as needed
-
-enable htpasswd in OCP
-~~~~~~ ~~~~~~~ ~~~~~~~
-1. Admin view
-2. OCP Configuration
-3. Click OAuth
-4. Choose htpasswd as provider and upload the file
-5. Log in with new users to see them listed as users
-
-enable admin permissions for user
-~~~~ ~~~~~~ ~~~~~~~~ ~~~~~ ~~~~~~
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: dev2-cluster-admin
-subjects:
-  - kind: User
-    apiGroup: rbac.authorization.k8s.io
-    name: dev2
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
