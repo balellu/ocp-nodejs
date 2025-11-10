@@ -1,5 +1,6 @@
-Kubectl commands
----- ---- ---- -
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+                                Kubectl commands 
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
 Creates:-
 ~~~~~~~~
 kubectl --kubeconfig kube-files/akubec apply -f kube-files/ude-demoapp-deploy.yaml
@@ -22,8 +23,9 @@ kubectl --kubeconfig kube-files/akubec get svc -n ude-demo-app
 kubectl --kubeconfig kube-files/ekubec get svc -n ude-demo-app
 kubectl --kubeconfig kube-files/gkubec get svc -n ude-demo-app
 
-App podman commands
----- ---- ---- ---- 
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+                                Podman commands 
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
 podman login quay.io. //pbalellu 
 podman build -t quay.io/pbalellu/njs-demo-app .
 podman push quay.io/pbalellu/njs-demo-app
