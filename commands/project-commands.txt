@@ -15,6 +15,10 @@ kubectl --kubeconfig kube-files/gkubec delete -n ude-demo-app
 
 Gets:-
 ~~~~~~
+kubectl --kubeconfig kube-files/akubec get namespaces
+kubectl --kubeconfig kube-files/ekubec get namespaces
+kubectl --kubeconfig kube-files/gkubec get namespaces
+
 kubectl --kubeconfig kube-files/akubec get nodes
 kubectl --kubeconfig kube-files/ekubec get nodes
 kubectl --kubeconfig kube-files/gkubec get nodes
