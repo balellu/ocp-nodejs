@@ -95,3 +95,46 @@ Set up google cli and kubectl
 <restart shell to apply PATH vars>
 
 4# gcloud components install gke-gcloud-auth-plugin
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+                                Configure OCP 
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+User management
+---- ---- -----
+htpasswd file creation
+~~~~~~ ~~~~~~ ~~~~~~ ~~
+htpasswd -c ocp-basic.txt user1
+htpasswd ocp-basic.txt user2 //add users as many as needed
+
+enable htpasswd in OCP
+~~~~~~ ~~~~~~~ ~~~~~~~
+1. Admin view
+2. OCP Configuration
+3. Click OAuth
+4. Choose htpasswd as provider and upload the file
+5. Log in with new users to see them listed as users
+
+enable admin permissions for user
+~~~~ ~~~~~~ ~~~~~~~~ ~~~~~ ~~~~~~
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: dev2-cluster-admin
+subjects:
+  - kind: User
+    apiGroup: rbac.authorization.k8s.io
+    name: dev2
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+
+ACM spoke cluster
+---- ----- ---- --
+Copy your OpenShift Container Platform pull secret from cloud.redhat.com/openshift/install/pull-secret by selecting Copy pull secret. You need the content of this pull secret in a step later in this procedure. Your OpenShift Container Platform pull secret is associated with your Red Hat Customer Portal ID and is the same across all Kubernetes providers.
+1. In the OpenShift Container Platform console navigation, select Workloads > Secrets.
+2. Select Create > Image Pull Secret.
+3. Enter a name for your secret.
+4. Select Upload Configuration File as the authentication type.
+5. In the Configuration file field, paste the pull secret that you copied from cloud.redhat.com.
+6. Select Create to create the secret. 
