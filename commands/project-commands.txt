@@ -3,11 +3,18 @@
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
 Creates:-
 ~~~~~~~~
+Node.JS
+======
 kubectl --kubeconfig kube-files/akubec apply -f kube-files/ude-demoapp-deploy.yaml
 kubectl --kubeconfig kube-files/ekubec apply -f kube-files/ude-demoapp-deploy.yaml
 kubectl --kubeconfig kube-files/gkubec apply -f kube-files/ude-demoapp-deploy.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/balellu/ocp-nodejs/refs/heads/master/kube-files/ude-demoapp-deploy.yaml
+
+Quarkus
+=======
+kubectl --kubeconfig kube-files/akubec apply -f kube-files/ude-quarkus-demo-app.yaml
+kubectl --kubeconfig kube-files/akubec logs -f <pod-name> -n ude-quarkus-demo-app
 
 Deletes:-
 ~~~~~~~~
@@ -32,7 +39,14 @@ kubectl --kubeconfig kube-files/gkubec get svc -n ude-demo-app
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Podman commands 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
-podman login quay.io. //pbalellu 
+Node.js
+~~~~~~~
+podman login quay.io //username: pbalellu 
 podman build -t quay.io/pbalellu/njs-demo-app .
 podman push quay.io/pbalellu/njs-demo-app
 
+Quarkus
+~~~~~~~
+podman login quay.io //username: pbalellu
+podman build -t quay.io/pbalellu/quarkus-demo-app .
+podman push quay.io/pbalellu/quarkus-demo-app
