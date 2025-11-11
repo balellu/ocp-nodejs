@@ -7,6 +7,8 @@ kubectl --kubeconfig kube-files/akubec apply -f kube-files/ude-demoapp-deploy.ya
 kubectl --kubeconfig kube-files/ekubec apply -f kube-files/ude-demoapp-deploy.yaml
 kubectl --kubeconfig kube-files/gkubec apply -f kube-files/ude-demoapp-deploy.yaml
 
+kubectl apply -f https://raw.githubusercontent.com/balellu/ocp-nodejs/refs/heads/master/kube-files/ude-demoapp-deploy.yaml
+
 Deletes:-
 ~~~~~~~~
 kubectl --kubeconfig kube-files/akubec delete -n ude-demo-app
