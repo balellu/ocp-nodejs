@@ -1,0 +1,64 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ude-quarkus-demo-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ude-quarkus-demo-app
+  name: ude-quarkus-demo-app-deploy
+  labels:
+    app: ude-quarkus-app
+    test: test
+  # annotations:
+  #   fluxcd.io/tag.njs-app: semver:~1.0
+  #   fluxcd.io/automated: 'true'
+spec:
+  selector:
+    matchLabels:
+      app: ude-quarkus-app
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: ude-quarkus-app
+    spec:
+      containers:
+      - name: ude-quarkus-app
+        image: quay.io/pbalellu/quarkus-demo-app
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "264Mi"
+            cpu: "250m"
+          limits:
+            memory: "628Mi"
+            cpu: "1000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+  name: quarkus-app-service
+  namespace: ude-quarkus-demo-app
+  labels:
+    app: ude-quarkus-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: ude-quarkus-app
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 8080
