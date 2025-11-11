@@ -1,0 +1,10 @@
+# FROM registry.access.redhat.com/ubi8/ubi-minimal:8.5
+# FROM registry.access.redhat.com/ubi8/openjdk-11:latest
+FROM registry.access.redhat.com/ubi8/openjdk-17:latest
+WORKDIR /work/
+COPY target/quarkus-app/lib/ /work/lib/
+COPY target/quarkus-app/app/ /work/app/
+COPY target/quarkus-app/quarkus/ /work/quarkus/
+COPY target/quarkus-app/*.jar /work/
+EXPOSE 8080
+CMD ["java", "-jar", "quarkus-run.jar"]
