@@ -59,7 +59,9 @@ aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure Azure 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
-
+1. Create a regular AKS cluster
+2. Export kubeconfig
+az aks get-credentials --resource-group openenv-7648w --name aks-one-cloud --admin
 
 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
