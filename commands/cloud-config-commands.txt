@@ -140,3 +140,9 @@ Copy your OpenShift Container Platform pull secret from cloud.redhat.com/openshi
 4. Select Upload Configuration File as the authentication type.
 5. In the Configuration file field, paste the pull secret that you copied from cloud.redhat.com.
 6. Select Create to create the secret. 
+7. In the OpenShift UI navigate to Installed Operators > Advanced Cluster Management for Kubernetes and select the correct namespace. Default is open-cluster-management
+Select the MultiClusterHub tab.
+8. Edit the MultiClusterHub yaml in the spec section.
+9. Add the imagePullSecret: under spec and specify the name of the secret you created in step #3 above.
+spec:
+imagePullSecret: rhacm-image-pull-secret
