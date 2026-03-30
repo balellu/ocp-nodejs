@@ -133,10 +133,12 @@ roleRef:
 
 ACM spoke cluster
 ---- ----- ---- --
-Copy your OpenShift Container Platform pull secret from cloud.redhat.com/openshift/install/pull-secret by selecting Copy pull secret. You need the content of this pull secret in a step later in this procedure. Your OpenShift Container Platform pull secret is associated with your Red Hat Customer Portal ID and is the same across all Kubernetes providers.
-1. In the OpenShift Container Platform console navigation, select Workloads > Secrets.
-2. Select Create > Image Pull Secret.
-3. Enter a name for your secret.
+Copy your OpenShift Container Platform pull secret from cloud.redhat.com/openshift/install/pull-secret by selecting Copy pull secret. 
+You need the content of this pull secret in a step later in this procedure. Your OpenShift Container Platform pull secret is associated 
+with your Red Hat Customer Portal ID and is the same across all Kubernetes providers.
+1. In the OpenShift Container Platform console navigation, select project 'open-cluster-management'.
+2. Select Workloads > Secrets > Create > Image Pull Secret.
+3. Enter a name for your secret something like 'rhacm-image-pull-secre'.
 4. Select Upload Configuration File as the authentication type.
 5. In the Configuration file field, paste the pull secret that you copied from cloud.redhat.com.
 6. Select Create to create the secret. 
