@@ -54,7 +54,7 @@ autoModeConfig:
 
 Get kubeconfig on aws commnadline
 ---- ---- ---- ---- ---- ---- ----
-aws eks update-kubeconfig --region us-east-2 --name one-cloud-eks
+aws eks update-kubeconfig --region us-east-2 --name eks-one-cloud
 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
                                 Configure Azure 
