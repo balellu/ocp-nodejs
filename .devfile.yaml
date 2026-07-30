@@ -3,8 +3,9 @@ metadata:
   name: demo-nodejs-app
 components:
   - container:
+      image: quay.io/devfile/universal-developer-image:ubi10-latest
 #      image: quay.io/devfile/universal-developer-image:ubi9-latest
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
+#      image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 16G
       memoryRequest: 8G
       endpoints:
@@ -56,6 +57,6 @@ commands:
       group:
         isDefault: false
         kind: run
-events:
-  postStart:
-    - install-aws-cli
+#events:
+#  postStart:
+#    - install-aws-cli
