@@ -31,7 +31,8 @@ commands:
         kind: run
   - id: install-aws-cli
     exec:
-      commandLine: 'pip3 install awscli --upgrade'
+      commandLine: 'pip install awscli --upgrade'
+#      commandLine: 'pip3 install awscli --upgrade'
       component: runtime
   - id: deploy-on-eks
     exec:
