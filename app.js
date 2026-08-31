@@ -5,7 +5,7 @@ import express from "express"
 const PORT = 8080;
 const HOST = '0.0.0.0';
  
-// App
+// Application code
 const app = express();
 app.get('/', (req, res) => {
   var greetStr = 'Hello World';
